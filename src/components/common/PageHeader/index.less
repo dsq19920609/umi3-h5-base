@@ -1,0 +1,29 @@
+@import '~@/global.less';
+
+.pageHeader {
+  height: @navbar-height;
+  width: 100%;
+  top: 0rem;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #FFFFFF;
+  border-radius: 0px 0px .26rem .26rem;
+  font-size: @header-title-font-size;
+  font-family: Exo-Bold;
+  color: #2C2C2C;
+  padding: @content-padding;
+  z-index: 999;
+  .imgBox {
+    position: absolute;
+    left: 0.32rem;
+    width: 1rem;
+    height: .58rem;
+    img {
+      position: absolute;
+      width: .36rem;
+      height: .58rem;
+    }
+  }
+}

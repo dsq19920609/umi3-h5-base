@@ -1,0 +1,21 @@
+@import '~@/global.less';
+
+.pageLoading {
+  position: absolute;
+  z-index: 9999;
+  height: 100%;
+  width: 100%;
+  display: flex!important;
+  justify-content: center;
+  align-items: center;
+  :global {
+    .am-activity-indicator-spinner {
+      width: 0.48rem;
+      height: 0.48rem;
+    }
+  }
+}
+.hasHeader {
+  top: @navbar-height;
+  height: calc(100% - @navbar-height);
+}

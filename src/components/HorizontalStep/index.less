@@ -1,0 +1,37 @@
+.verStep {
+  width: 3.86rem;
+  display: flex;
+  justify-content: space-between;
+  & > div {
+    width: 0.48rem;
+    height: 0.48rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.1rem 0.2rem 0.2rem 0rem;
+    position: relative;
+  }
+  .curStep ~ div {
+    &::before {
+      position: absolute;
+      right: 0.54rem;
+      content: '';
+      width: 1.08rem;
+      height: 0.0rem;
+      border-top: 0.05rem dashed rgba(0, 0, 0, 0.2);
+    }
+  }
+  .preStep::after {
+    position: absolute;
+    left: 0.54rem;
+    content: '';
+    width: 1.1rem;
+    height: 0.0rem;
+    border-top: 0.05rem dashed #CE1126;
+  }
+  .curStep, .preStep {
+    background: #CE1126;
+  }
+}

@@ -1,0 +1,98 @@
+/*--------------------------------------------less变量------------------------------------------------------*/
+// --颜色
+@base-color: #F2F2F2;
+@red-color: red;
+
+
+// --背景
+@background: @base-color;
+@background-color: @base-color;
+
+// --字体
+@base-font-path: './assets/fonts/';
+@font-size-base: .28rem; // 主字号
+@font-size-lg: .32rem; // 大字号
+@font-size-sm: .24rem; // 小字号
+@header-title-font-size: .36rem; // 头标题字号
+
+// --paddging、margin、border、radius、shadow相关样式
+@content-padding: 0rem 0.32rem;
+
+// --width、height相关样式
+@navbar-height: .88rem; // 导航栏高度
+@footer-height: 1.52rem;  // 底部栏高度
+
+/*--------------------------------------------less函数------------------------------------------------------*/
+
+.bw-font(@name, @fileName, @weight: 'normal') { // 字体引入函数
+  @font-face {
+    font-family: @name;
+    src: url('@{base-font-path}/@{fileName}.eot'),
+         url('@{base-font-path}/@{fileName}.otf'),
+         url('@{base-font-path}/@{fileName}.ttf'),
+         url('@{base-font-path}/@{fileName}.woff');
+    font-weight: @weight;
+  }
+}
+.bw-font('Exo-Bold', 'Exo-Bold');
+
+
+.footerFixedBtn {
+  height: .92rem;
+  width: calc(100% - 0.64rem);
+  background: #CE1126;
+  border-radius: .48rem;
+  margin: 0 auto;
+  position: fixed;
+  bottom: .32rem;
+  font-size: .28rem;
+  font-family: Montserrat-SemiBold;
+  font-weight: 600;
+  line-height: .92rem;
+  text-align: center;
+  color: #FFFFFF;
+  left: 0.32rem;
+  border: none;
+  outline: none;
+}
+
+.clearfix(){  // 清除浮动
+  &:before,
+  &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+.ellipsis() { // 单行文本截取
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.mulEllipsis(@lineNum: 2) { // 多行文本截取，此样式IE下不显示'...'，因此单行文本截取用ellipsis
+  display: -webkit-box;
+  -webkit-line-clamp: @lineNum;
+  /*!autoprefixer:off*/
+  -webkit-box-orient: vertical;
+  /*autoprefixer:on*/
+  overflow: hidden;
+}
+
+/*------------------------------------------页面统一样式-----------------------------------------------------*/
+
+html { // 移动端尺寸适配
+  font-size: calc(100vw / 7.5); // 设计稿375px 1rem = 50px
+}
+html, body, #root {
+  margin: 0rem;
+  height: 100%;
+  overflow: hidden auto;
+  background: @base-color;
+}
+p {
+  margin-bottom: 0rem;
+}

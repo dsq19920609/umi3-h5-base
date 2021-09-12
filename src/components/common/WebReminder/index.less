@@ -1,0 +1,31 @@
+@import '~@/global.less';
+
+.container {
+  background: #F4F4F4;
+  display: flex;
+  justify-content: center; /*定义body的里的元素水平居中*/
+  position: relative; /*设置position属性*/
+  top: 50%; /*偏移*/
+  transform: translateY(-50%);
+  .content {
+    text-align: center;
+    width: 4.12rem;
+    background: #FFFFFF;
+    .logo {
+      margin-top: .088rem;
+      height: .67rem;
+    }
+    .noData {
+      margin-top: .17rem;
+      height: .87rem;
+    }
+    .desc {
+      text-align: center;
+      font-size: .088rem;
+      font-family: Montserrat-Bold;
+      line-height: .176rem;
+      color: #CE1126;
+      margin: .176rem .73rem .252rem .73rem;
+    }
+  }
+}

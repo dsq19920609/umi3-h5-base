@@ -1,0 +1,44 @@
+.noChecked {
+  width: .42rem;
+  height: .42rem;
+  background: #FFFFFF;
+  border: 0.02rem solid #C7C7C7;
+  border-radius: .08rem;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.checked {
+  width: 0.42rem;
+  height: 0.42rem;
+  background: #0038A8;
+  border-radius: .08rem;
+  display: inline-block;
+  box-sizing: border-box;
+  position: relative;
+  &::after {
+    position: absolute;
+    content: '';
+    width: 0.06rem;
+    height: 0.16rem;
+    left: 0.12rem;
+    top: 0.2rem;
+    background-color: #FFFFFF;
+    transform: rotate(-50deg);
+    border-bottom-left-radius: .02rem;
+    border-top-right-radius: 0.02rem;
+    border-top-left-radius: 0.02rem;
+  }
+  &::before {
+    position: absolute;
+    content: '';
+    width: 0.06rem;
+    height: 0.24rem;
+    right: 0.112rem;
+    top: 0.085rem;
+    background-color: #FFFFFF;
+    transform: rotate(41deg);
+    border-top-right-radius: 0.02rem;
+    border-top-left-radius: 0.02rem;
+  }
+}

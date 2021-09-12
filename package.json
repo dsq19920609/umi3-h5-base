@@ -1,0 +1,57 @@
+{
+  "private": true,
+  "scripts": {
+    "start": "cross-env NODE_ENV=development umi dev",
+    "build": "cross-env NODE_ENV=production umi build",
+    "postinstall": "umi generate tmp",
+    "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,json}'",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx} --fix",
+    "clear": "rimraf node_modules"
+  },
+  "dependencies": {
+    "@ant-design/pro-layout": "^6.5.0",
+    "@umijs/preset-react": "1.x",
+    "antd": "^4.16.0",
+    "antd-mobile": "^2.3.4",
+    "axios": "^0.21.1",
+    "crypto-js": "^4.0.0",
+    "dva": "^2.4.1",
+    "dva-cli": "^0.10.1",
+    "gtag-helper": "^0.1.0",
+    "husky": "^7.0.2",
+    "lodash": "^4.17.20",
+    "moment": "^2.29.1",
+    "postcss-plugin-px2rem": "^0.8.1",
+    "react": "^17.0.1",
+    "react-device-detect": "^1.15.0",
+    "react-dom": "^17.0.1",
+    "react-facebook-pixel": "^1.0.4",
+    "react-intl": "^5.10.11",
+    "react-twitter-pixel": "^0.0.3",
+    "sa-sdk-javascript": "^1.16.6",
+    "umi": "^3.3.3"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/moment": "^2.13.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "lint-staged": "^11.1.2",
+    "prettier": "^2.4.0",
+    "typescript": "^4.1.2",
+    "yorkie": "^2.0.0",
+    "cross-env": "^7.0.3",
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,less,css}": [
+      "prettier --write src/**/*.{js,jsx,tsx,ts,less,css}",
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}

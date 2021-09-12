@@ -1,0 +1,22 @@
+@import '~@/global.less';
+
+.deviding {
+  height: .08rem;
+  width: 110%;
+  transform: skewX(-30deg);
+  overflow: hidden;
+  margin-left: 0.05rem;
+  .clearfix();
+  & > div {
+    float: left;
+    height: .08rem;
+    margin-right: 2%;
+    width: 5.04%;
+  }
+  & > div:nth-child(odd) {
+    background: #0038A8;
+  }
+  & > div:nth-child(even) {
+    background: #CE1126;
+  }
+}
